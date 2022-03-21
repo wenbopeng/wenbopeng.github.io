@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://wenbopeng.github.io">
   <title>How to write a paper with pandoc and citation plugins | 彭文波的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell. For example, I">
+  <meta name="description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to write a paper with pandoc and citation plugins">
 <meta property="og:url" content="https://wenbopeng.github.io/2022/03/21/How%20to%20write%20a%20paper%20with%20pandoc%20and%20citation%20plugins/index.html">
 <meta property="og:site_name" content="彭文波的博客">
-<meta property="og:description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell. For example, I">
+<meta property="og:description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://s2.loli.net/2022/03/07/va4rOUN5ZAphJoq.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/03/07/KzETmVtYFbQIlqP.jpg">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/03/07/Dd2cYUFZkbOuNaH.jpg">
 <meta property="og:image" content="https://s2.loli.net/2022/03/07/qGfPQB1nIoeVuFg.jpg">
 <meta property="article:published_time" content="2022-03-21T01:59:17.512Z">
-<meta property="article:modified_time" content="2022-03-21T01:59:42.855Z">
+<meta property="article:modified_time" content="2022-03-21T02:40:01.692Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
@@ -171,9 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>The <code>Extra Pandoc arguments</code> at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell. For example, I put the metadata defined in the frontmatter of the <code>.md</code> file (they are related to pandoc commands like the bibLatex&#x2F;bibtex file you need to use, and the <code>csl</code> file that defines the citation style, as well as the margins, figures and table styles etc.. Of course, you can absolutely put all this metadata in the frontmatter of your notes) in a text file called <code>Pandocstyle.yaml</code>. Then you can call this <code>Pandocstyle.yaml</code> file in the <code>Extra Pandoc arguments</code>. Alternatively, you can specify a doc file as a template for output doc files. Just like <code>--filter pandoc-crossref --citeproc --metadata-file D:\cite\Pandocstyle.yaml --reference-doc=D:\cite\doctemplate.docx</code> The Citation plugin allows you to create notes based on the BibTex&#x2F;BibLatex files exported by Zotero or Citavi, etc. Citation notes will be created based on your pre-defined templates. Amazingly, you can even use citationkey as the title of your citation notes. You can also define a Markdown template in the Citation plugin, and attach a comment to your citationkey link (like a translation of the title or your notes, etc.), which are automatically inserted and they are only visible in the edit mode, not in the preview mode and not in Pandoc output files. This allows you to do bibliographic citation very quickly with the shortcut keys of the citation plugin. Finally, you just need to change double bracketed citations in your notes to single brackets, and you can output your final version of the paper directly according to the bibs and <code>csl</code> specified in the <code>Pandocstyle.yaml</code> defined earlier.</p>
-<span id="more"></span> 
-
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>The <code>Extra Pandoc arguments</code> at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell. <span id="more"></span> For example, I put the metadata defined in the frontmatter of the <code>.md</code> file (they are related to pandoc commands like the bibLatex&#x2F;bibtex file you need to use, and the <code>csl</code> file that defines the citation style, as well as the margins, figures and table styles etc.. Of course, you can absolutely put all this metadata in the frontmatter of your notes) in a text file called <code>Pandocstyle.yaml</code>. Then you can call this <code>Pandocstyle.yaml</code> file in the <code>Extra Pandoc arguments</code>. Alternatively, you can specify a doc file as a template for output doc files. Just like <code>--filter pandoc-crossref --citeproc --metadata-file D:\cite\Pandocstyle.yaml --reference-doc=D:\cite\doctemplate.docx</code> The Citation plugin allows you to create notes based on the BibTex&#x2F;BibLatex files exported by Zotero or Citavi, etc. Citation notes will be created based on your pre-defined templates. Amazingly, you can even use citationkey as the title of your citation notes. You can also define a Markdown template in the Citation plugin, and attach a comment to your citationkey link (like a translation of the title or your notes, etc.), which are automatically inserted and they are only visible in the edit mode, not in the preview mode and not in Pandoc output files. This allows you to do bibliographic citation very quickly with the shortcut keys of the citation plugin. Finally, you just need to change double bracketed citations in your notes to single brackets, and you can output your final version of the paper directly according to the bibs and <code>csl</code> specified in the <code>Pandocstyle.yaml</code> defined earlier.</p>
 <p>Here are some sample images:</p>
 <p><img src="https://s2.loli.net/2022/03/07/va4rOUN5ZAphJoq.jpg" alt="Extra Pandoc arguments"></p>
 <p><img src="https://s2.loli.net/2022/03/07/KzETmVtYFbQIlqP.jpg" alt="Pandocstyle.yaml"></p>
@@ -426,6 +424,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">文献</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">社会网络</a>
               </li>
              
               <li class="article-tag-list-item">
