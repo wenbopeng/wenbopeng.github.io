@@ -170,44 +170,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
-<li>备注:: 👈[[正则表达式]]</li>
+<li><h2 id="备注-正则表达式">备注:: 👈[[正则表达式]]</h2></li>
 </ul>
-<hr>
-<span id="more"></span> 
-
-<h2 id="腾讯会议"><a href="#腾讯会议" class="headerlink" title="腾讯会议"></a>腾讯会议</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(\()(..:..:..)(\))</span><br><span class="line">[\2]\(url#t=\2\)</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
+<h2 id="腾讯会议">腾讯会议</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(\()(..:..:..)(\))</span><br><span class="line">[\2]\(url#t=\2\)</span><br></pre></td></tr></table></figure>
 <p>例子：[[董成业-最小二乘法选择及Eviews操作]]</p>
-<h2 id="飞书妙记"><a href="#飞书妙记" class="headerlink" title="飞书妙记"></a>飞书妙记</h2><ul>
-<li>一小时以内的时间戳补全小时标记<code>00：</code><ul>
+<h2 id="飞书妙记">飞书妙记</h2>
+<ul>
+<li>一小时以内的时间戳补全小时标记<code>00：</code>
+<ul>
 <li>原因：一小时内的时间戳，只包含分和秒，没有小时标记，导致正则替换时与一小时以上的数据产生混淆</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p>先将一小时以上的视频加上 <code>$</code> 标记，避免和一小时以内的时间戳混淆</p>
+<p>先将一小时以上的视频加上 <code>$</code>
+标记，避免和一小时以内的时间戳混淆</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(..:..:..)</span><br><span class="line">$\1</span><br></pre></td></tr></table></figure>
-
 <p>然后查找一小时以内的时间戳，补上小时标记 <code>00：</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(..:..)</span><br><span class="line">00:\1</span><br></pre></td></tr></table></figure>
-
 <p>然后删除之前的 <code>$</code> 标记</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\$(..:..:..)</span><br><span class="line">\1</span><br></pre></td></tr></table></figure>
-
 <p>最后进行批量替换</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(..:..:..)</span><br><span class="line">[\1]\(url#t=\1\)</span><br></pre></td></tr></table></figure>
-
 <p>例子：[[管理研究方法论20200602_083322]]</p>
-<h3 id="Quicker版效率更高"><a href="#Quicker版效率更高" class="headerlink" title="Quicker版效率更高"></a>Quicker版效率更高</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(..:..:..)|@$1</span><br><span class="line"> (..:..)| 00:$1</span><br><span class="line">\@(..:..:..)|$1</span><br><span class="line">(..:..:..)|[$1](url#t=$1)</span><br></pre></td></tr></table></figure>
-
-<hr>
+<h3 id="quicker版效率更高">Quicker版效率更高</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(..:..:..)|@$1</span><br><span class="line"> (..:..)| 00:$1</span><br><span class="line">\@(..:..:..)|$1</span><br><span class="line">(..:..:..)|[$1](url#t=$1)</span><br></pre></td></tr></table></figure>
+<hr />
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table tags as &quot;🔖&quot; , file.outlinks as &quot;👉&quot;,file.inlinks as &quot;👈&quot;  FROM ([[正则表达式]]) and !#MOC</span><br><span class="line">sort file.ctime desc</span><br></pre></td></tr></table></figure>
-
-<h1 id="本文引用"><a href="#本文引用" class="headerlink" title="本文引用"></a>本文引用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table tags as &quot;🔖&quot; , file.outlinks as &quot;👉&quot;,file.inlinks as &quot;👈&quot; ,备注 as &quot;✍️&quot;  FROM outgoing([[视频时间戳]])</span><br><span class="line">sort file.ctime desc</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="引用本文"><a href="#引用本文" class="headerlink" title="引用本文"></a>引用本文</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table tags as &quot;🔖&quot; , file.outlinks as &quot;👉&quot;,file.inlinks as &quot;👈&quot; ,备注 as &quot;✍️&quot; FROM ([[视频时间戳]])</span><br><span class="line">sort file.ctime desc</span><br></pre></td></tr></table></figure>
-
-
+<h1 id="本文引用">本文引用</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table tags as &quot;🔖&quot; , file.outlinks as &quot;👉&quot;,file.inlinks as &quot;👈&quot; ,备注 as &quot;✍️&quot;  FROM outgoing([[视频时间戳]])</span><br><span class="line">sort file.ctime desc</span><br></pre></td></tr></table></figure>
+<h1 id="引用本文">引用本文</h1>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table tags as &quot;🔖&quot; , file.outlinks as &quot;👉&quot;,file.inlinks as &quot;👈&quot; ,备注 as &quot;✍️&quot; FROM ([[视频时间戳]])</span><br><span class="line">sort file.ctime desc</span><br></pre></td></tr></table></figure>
 
       
 
@@ -221,7 +214,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝一杯咖啡<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -343,6 +336,19 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">备注:: 👈[[正则表达式]]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%85%BE%E8%AE%AF%E4%BC%9A%E8%AE%AE"><span class="toc-number">2.</span> <span class="toc-text">腾讯会议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A3%9E%E4%B9%A6%E5%A6%99%E8%AE%B0"><span class="toc-number">3.</span> <span class="toc-text">飞书妙记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#quicker%E7%89%88%E6%95%88%E7%8E%87%E6%9B%B4%E9%AB%98"><span class="toc-number">3.1.</span> <span class="toc-text">Quicker版效率更高</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E5%BC%95%E7%94%A8"><span class="toc-number"></span> <span class="toc-text">本文引用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E6%9C%AC%E6%96%87"><span class="toc-number"></span> <span class="toc-text">引用本文</span></a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -449,11 +455,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -465,11 +471,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">媒体</a>
+                <a href="javascript:void(0)" class="js-tag color4">PED</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">PED</a>
+                <a href="javascript:void(0)" class="js-tag color3">媒体</a>
               </li>
              
               <li class="article-tag-list-item">
