@@ -146,6 +146,163 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/21/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">如何搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/21/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
+  	<time datetime="2022-03-20T23:43:38.062Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>附件::</li>
+<li>备注:: <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?spm_id_from=333.337.search-card.all.click">手把手教你从0开始搭建自己的个人博客
+|无坑版视频教程| hexo_哔哩哔哩_bilibili</a>, 2022/3/20</li>
+</ul>
+<h1 id="常见问题">常见问题</h1>
+<ul>
+<li>脚注问题<a
+target="_blank" rel="noopener" href="https://www.yuanmacha.com/11747036.html">如何更有效地将脚注插入Hexo帖子？
+- markdown代码 - 源码查</a>, 2022/3/20
+<ul>
+<li><code>install hexo-footnotes --save</code></li>
+</ul></li>
+<li>数学公式问题</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.zhihu.com/question/266580135/answer/374705613">hexo下yilia主题配置数学公式有的能够加载起有的不能
+求解？ - 知乎</a>, 2022/3/21</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">title: [Hexo 搭建个人博客（完结）Hexo 相关问题和优化_15wylu的博客-CSDN博客](https://blog.csdn.net/qq_32767041/article/details/103285147), 2022-03-21.</span><br><span class="line">Hexo 默认自带的 Markdown 渲染引擎 `hexo-renderer-marked` 有很多不足，例如在渲染数学公式时会有很多问题，同时因为它默认开启 `smartypants`，导致引号显示异常，所以最好的解决方案是更换 Hexo 默认的 Markdown 渲染引擎。</span><br><span class="line"></span><br><span class="line">这里推荐使用 [hexo-renderer-pandoc](https://github.com/wzpan/hexo-renderer-pandoc)，这个插件依赖于 [Pandoc](https://github.com/jgm/pandoc)，具体的操作可以参考下面 “数学公式渲染”。</span><br><span class="line"></span><br><span class="line">**更换渲染引擎后，无需修改任何配置，引号的显示就是正常的。**</span><br></pre></td></tr></table></figure>
+<ul>
+<li>参考文献的问题
+<ul>
+<li>使用hexo-renderer-pandoc来作为渲染引擎</li>
+<li><a
+target="_blank" rel="noopener" href="https://github.com/wzpan/hexo-renderer-pandoc/issues/43">关于新版本pandoc中citeproc模块的处理
+· Issue #43 · wzpan/hexo-renderer-pandoc</a>, 2022/3/21</li>
+</ul></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">pandoc:</span></span><br><span class="line"> <span class="attr">filters:</span></span><br><span class="line"> <span class="attr">extra:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="attr">citeproc:</span></span><br><span class="line"> <span class="bullet">-</span> <span class="attr">metadata-file:</span> <span class="string">&quot;D:/博士/cite/pdf.yaml&quot;</span></span><br><span class="line"> <span class="attr">template:</span></span><br><span class="line"> <span class="attr">meta:</span></span><br><span class="line"> <span class="attr">mathEngine:</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>admonition问题<a
+target="_blank" rel="noopener" href="https://www.lixl.cn/2020/041837756.html">Hexo-admonition
+插件安装使用指南 | 悟尘记 - 李小龙的博客网站</a>, 2022/3/20</li>
+</ul>
+<p>定义路径 <code>e:\blog</code></p>
+<h3 id="下载主题">下载主题</h3>
+<ul>
+<li>下载主题
+<ul>
+<li><code>git clone https://github.com/litten/hexo-theme-yilia.git
+themes/yilia</code> [[hexo的yml文件]]</li>
+</ul></li>
+</ul>
+<h3 id="next主题">next主题</h3>
+<ul>
+<li><code>git clone https://github.com/iissnan/hexo-theme-next.git
+themes/Next</code>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39898645/article/details/109181736">出错的问题</a>,
+2022/3/20</li>
+</ul></li>
+</ul>
+<h3 id="创建新文档">创建新文档</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="运行服务器">运行服务器</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="生成静态网页">生成静态网页</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="推送到github">推送到Github</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>公众号推广图</p>
+<!--
+
+![image.png](https://s2.loli.net/2022/03/20/CSpt4dGzTrRomvs.jpg)
+
+![image.png](https://s2.loli.net/2022/03/20/UZiqsvy7pEdAIhN.jpg)
+
+![image.png](https://s2.loli.net/2022/03/20/FP9um67KSV5T1tl.jpg)
+
+![image.png](https://s2.loli.net/2022/03/20/PE4aqeKigjbFHIU.jpg)
+
+
+![image.png](https://pic.rmb.bdstatic.com/bjh/9fb5994c9eee4a72dce92ea0e7e59c7c.jpeg)-->
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/21/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-软件使用技巧MOC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1020,6 +1177,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">cite</a>
               </li>
             
             <div class="clearfix"></div>
