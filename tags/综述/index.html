@@ -6,26 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wenbopeng.github.io">
-  <title>How to write a paper with pandoc and citation plugins | 彭文波的博客</title>
+  <title>Tag: 综述, | 彭文波的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="How to write a paper with pandoc and citation plugins">
-<meta property="og:url" content="https://wenbopeng.github.io/2022/03/21/How%20to%20write%20a%20paper%20with%20pandoc%20and%20citation%20plugins/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="彭文波的博客">
+<meta property="og:url" content="https://wenbopeng.github.io/tags/%E7%BB%BC%E8%BF%B0/index.html">
 <meta property="og:site_name" content="彭文波的博客">
-<meta property="og:description" content="The Extra Pandoc arguments at the bottom of the Pandoc plugin allows you to set up additional commands that need to be entered into pandoc, just like the commands entered in powershell.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/va4rOUN5ZAphJoq.jpg">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/KzETmVtYFbQIlqP.jpg">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/udD2aLwsvMNEK4g.jpg">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/Dd2cYUFZkbOuNaH.jpg">
-<meta property="og:image" content="https://s2.loli.net/2022/03/07/qGfPQB1nIoeVuFg.jpg">
-<meta property="article:published_time" content="2022-03-21T01:59:17.512Z">
-<meta property="article:modified_time" content="2022-03-21T02:40:01.692Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="工具">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s2.loli.net/2022/03/07/va4rOUN5ZAphJoq.jpg">
   
     <link rel="alternative" href="/atom.xml" title="彭文波的博客" type="application/atom+xml">
   
@@ -155,244 +144,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-How to write a paper with pandoc and citation plugins" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      How to write a paper with pandoc and citation plugins
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2022" class="archive-year">2022</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2022/03/26/%E6%B6%89%E5%8F%8AROC%E5%92%8CAUC%E7%9A%84%E6%96%87%E7%8C%AE/" class="archive-article-date">
+  	<time datetime="2022-03-26T03:52:40.307Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2022/03/26/%E6%B6%89%E5%8F%8AROC%E5%92%8CAUC%E7%9A%84%E6%96%87%E7%8C%AE/">涉及ROC和AUC的文献</a>
     </h1>
   
 
-        
-        <a href="/2022/03/21/How%20to%20write%20a%20paper%20with%20pandoc%20and%20citation%20plugins/" class="archive-article-date">
-  	<time datetime="2022-03-21T01:59:17.512Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>The <code>Extra Pandoc arguments</code> at the bottom of the Pandoc
-plugin allows you to set up additional commands that need to be entered
-into pandoc, just like the commands entered in powershell. <span id="more"></span>
-For example, I put the metadata defined in the frontmatter of the
-<code>.md</code> file (they are related to pandoc commands like the
-bibLatex/bibtex file you need to use, and the <code>csl</code> file that
-defines the citation style, as well as the margins, figures and table
-styles etc.. Of course, you can absolutely put all this metadata in the
-frontmatter of your notes) in a text file called
-<code>Pandocstyle.yaml</code>. Then you can call this
-<code>Pandocstyle.yaml</code> file in the <code>Extra Pandoc
-arguments</code>. Alternatively, you can specify a doc file as a
-template for output doc files. Just like <code>--filter pandoc-crossref
---citeproc --metadata-file D:\cite\Pandocstyle.yaml
---reference-doc=D:\cite\doctemplate.docx</code> The Citation plugin
-allows you to create notes based on the BibTex/BibLatex files exported
-by Zotero or Citavi, etc. Citation notes will be created based on your
-pre-defined templates. Amazingly, you can even use citationkey as the
-title of your citation notes. You can also define a Markdown template in
-the Citation plugin, and attach a comment to your citationkey link (like
-a translation of the title or your notes, etc.), which are automatically
-inserted and they are only visible in the edit mode, not in the preview
-mode and not in Pandoc output files. This allows you to do bibliographic
-citation very quickly with the shortcut keys of the citation plugin.
-Finally, you just need to change double bracketed citations in your
-notes to single brackets, and you can output your final version of the
-paper directly according to the bibs and <code>csl</code> specified in
-the <code>Pandocstyle.yaml</code> defined earlier.</p>
-<p>Here are some sample images:</p>
-<figure>
-<img src="https://s2.loli.net/2022/03/07/va4rOUN5ZAphJoq.jpg"
-alt="Extra Pandoc arguments" />
-<figcaption aria-hidden="true">Extra Pandoc arguments</figcaption>
-</figure>
-<figure>
-<img src="https://s2.loli.net/2022/03/07/KzETmVtYFbQIlqP.jpg"
-alt="Pandocstyle.yaml" />
-<figcaption aria-hidden="true">Pandocstyle.yaml</figcaption>
-</figure>
-<figure>
-<img src="https://s2.loli.net/2022/03/07/udD2aLwsvMNEK4g.jpg"
-alt="Insert citation notes and annotation information that can be hidden" />
-<figcaption aria-hidden="true">Insert citation notes and annotation
-information that can be hidden</figcaption>
-</figure>
-<figure>
-<img src="https://s2.loli.net/2022/03/07/Dd2cYUFZkbOuNaH.jpg"
-alt="Citation Notes" />
-<figcaption aria-hidden="true">Citation Notes</figcaption>
-</figure>
-<figure>
-<img src="https://s2.loli.net/2022/03/07/qGfPQB1nIoeVuFg.jpg"
-alt="The template I defined in the citation plugin" />
-<figcaption aria-hidden="true">The template I defined in the citation
-plugin</figcaption>
-</figure>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝一杯咖啡<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">综述,</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wenbopeng.github.io/2022/03/21/How%20to%20write%20a%20paper%20with%20pandoc%20and%20citation%20plugins/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2022/03/21/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%BB%99%E8%A7%86%E9%A2%91%E8%AE%BE%E7%BD%AE%E6%97%B6%E9%97%B4%E6%88%B3/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          正则表达式给视频设置时间戳
-        
-      </div>
-    </a>
   
   
-    <a href="/2022/03/21/hexo%E7%9A%84yml%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo的yml文件</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -415,9 +220,9 @@ plugin</figcaption>
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
