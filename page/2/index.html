@@ -32,7 +32,7 @@
 
   
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -145,6 +145,180 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-吴江-社会网络计算基础理论与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">吴江-社会网络计算基础理论与实践</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
+  	<time datetime="2022-03-21T02:32:43.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>备注:: 社会网络计算方法、[[R语言社会网络分析]]</li>
+<li>附件:: [[社会网络计算基础理论与实践.pdf]]</li>
+</ul>
+<hr />
+<ul>
+<li>社会网络的计算范式
+<ul>
+<li><img src="https://s2.loli.net/2022/03/21/XxdTJyfAkhOIHcw.jpg"
+title="fig:" alt="image.png" /></li>
+</ul></li>
+<li>三元闭包
+<ul>
+<li><p>三元闭包原理</p></li>
+<li><p>网络边和节点的演化</p>
+<ul>
+<li>增加节点和边</li>
+<li>节点的访问</li>
+</ul></li>
+<li><p>聚集系数：</p>
+<ul>
+<li>点聚集系数：计算三元闭包的强度，<strong>节点A的任意两个朋友彼此也是朋友的概率</strong>，节点朋友圈的紧密程度，实际相邻点对/理论相邻点对，即：边/点对<span
+class="citation" data-cites="Newman.2003">(<a href="#ref-Newman.2003"
+role="doc-biblioref">Newman, 2003</a>)</span>
+<!--复杂网络的结构和功能The structure and function of complex networks--></li>
+<li>全局聚集系数：<span
+class="math inline">\(C=\frac{\text{三角形数}×3}{\text{连通三元组数}}\)</span>，有共同朋友的两个人中，彼此也是朋友的比例，也就是共被引的文献之间存在引用关系的比例。</li>
+<li>R语言igraph包计算聚集系数</li>
+</ul></li>
+</ul></li>
+<li>嵌入性
+<ul>
+<li>Granovetter(1985)<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv4889651/">经济学与社会学的爱恨情仇，新社会经济学格兰诺维特的嵌入
+- 哔哩哔哩专栏</a></li>
+</ul></li>
+<li>结构洞
+<ul>
+<li>移除某个点，会使得网络的连通分量增加。
+<ul>
+<li>聚集系数不高</li>
+<li>信息获取优势</li>
+<li>创造性放大优势
+<ul>
+<li>同质信息——异质信息</li>
+</ul></li>
+<li>社交把关的权力</li>
+<li>介数，参见[[R语言社会网络分析#^6126d7]]</li>
+</ul></li>
+<li>使用R语言计算中心度
+<ul>
+<li>参考书：[[社会网络计算基础理论与实践.pdf]]P67+7</li>
+<li>代码可参见[[R语言社会网络分析#计算四种中心性并返回数据框]]</li>
+</ul></li>
+</ul></li>
+<li>强弱关系
+<ul>
+<li>[[高斯混合模型（GMM)]]</li>
+<li>参考文献
+<ul>
+<li><span class="citation" data-cites="vanEck.2009">(<a
+href="#ref-vanEck.2009" role="doc-biblioref">van Eck &amp; Waltman,
+2009</a>)</span>
+<!--如何规范化共现数据?一些著名的相似度量的分析How to normalize cooccurrence data? An analysis of some well-known similarity measures--></li>
+<li><a
+target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-1557-589296.html">科学网—两类相似性测度
+- 武夷山的博文</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/yang_live/article/details/105079425">文本相似度计算：Jaccard系数，余弦相似度等_yang_live的博客-CSDN博客</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40176087/article/details/106250648">欧式距离、余玄相似度、编辑距离、jaccard相似性区别与总结_谈笑风生...的博客-CSDN博客</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5af7d0231ca2">技术 |
+文本聚类与分类 - 简书</a></li>
+</ul></li>
+<li>弱关系和捷径的关系验证
+<ul>
+<li>邻里重叠度（Jaccard相似度）：两节点共同邻居结点数/两节点邻居的总数</li>
+</ul></li>
+</ul></li>
+</ul>
+<h1 class="unnumbered" id="bibliography">参考文献</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-line-spacing="2" role="doc-bibliography">
+<div id="ref-Newman.2003" class="csl-entry" role="doc-biblioentry">
+Newman, M. E. J. (2003). <em>The structure and function of complex
+networks</em> (Vol. 45). <span>Society for Industrial and Applied
+Mathematics</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1137/S003614450342480">https://doi.org/10.1137/S003614450342480</a>
+</div>
+<div id="ref-vanEck.2009" class="csl-entry" role="doc-biblioentry">
+van Eck, N. J., &amp; Waltman, L. (2009). How to normalize cooccurrence
+data? An analysis of some well-known similarity measures. <em>Journal of
+the American Society for Information Science and Technology</em>,
+<em>60</em>(8), 1635–1651. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1002/asi.21075">https://doi.org/10.1002/asi.21075</a>
+</div>
+</div>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">文献</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">社会网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-正则表达式给视频设置时间戳" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -1392,15 +1566,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cite</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+                <a href="javascript:void(0)" class="js-tag color5">cite</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1409,6 +1579,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1436,11 +1610,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Quicker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MOC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Quicker</a>
+                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1452,7 +1630,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
+                <a href="javascript:void(0)" class="js-tag color4">R语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>

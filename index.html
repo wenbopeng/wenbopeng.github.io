@@ -32,7 +32,7 @@
 
   
 
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
 <body>
   <div id="container" q-class="show:isCtnShow">
@@ -145,6 +145,212 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-张敬信-R语言-ggplot2绘图语法串讲" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/09/%E5%BC%A0%E6%95%AC%E4%BF%A1-R%E8%AF%AD%E8%A8%80-ggplot2%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E4%B8%B2%E8%AE%B2/">张敬信-R语言-ggplot2绘图语法串讲学习笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/09/%E5%BC%A0%E6%95%AC%E4%BF%A1-R%E8%AF%AD%E8%A8%80-ggplot2%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E4%B8%B2%E8%AE%B2/" class="archive-article-date">
+  	<time datetime="2022-04-09T14:58:21.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>附件::
+[[速查表-ggplot2数据可视化.pdf]]|[[速查表-ggplot2数据可视化中文版.pdf]]|[[张敬信-R语言编程：基于tidyverse-至第3章-2021-11-07.pdf#page=218|张敬信R语言教程tidyverse可视化p218]]</li>
+<li>备注:: <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0">R语言-ggplot2绘图语法串讲_哔哩哔哩_bilibili</a>,
+2022/4/9</li>
+</ul>
+<blockquote>
+<p>[!info]- 教程主要内容 R语言-ggplot2绘图语法串讲，包括全部10个部件： •
+数据(data) • 映射(mapping) • 几何对象(geom) • 标度(scale) •
+统计变换(stats) • 坐标系(coord) • 位置调整(Position adjustments) •
+分面(facet) • 主题(theme) • 输出(output) 语法+代码实例讲解</p>
+</blockquote>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=47.974733">00:47</a>
+图层叠加而成，R语言的名片。
+<ul>
+<li>整洁的数据映射为几何对象，集合对象具有美学特征，会根据需要对数据做统计变换，调整标度，结果投影到坐标系，更换主题。<img
+src="https://s2.loli.net/2022/04/09/Noxw978jWq5fZ1y.jpg"
+alt="image.png" /></li>
+</ul></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=376.578184">06:16</a>
+基本绘图模板<img
+src="https://s2.loli.net/2022/04/09/KBAbVrpZ6JXjGCy.jpg"
+alt="image.png" /></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=631.34198">10:31</a>
+图形映射</li>
+</ul>
+<p>汽车数据可视化案例</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=1179.783505">19:39</a><br />
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>tidyverse<span class="punctuation">)</span></span><br><span class="line">ggplot<span class="punctuation">(</span>data <span class="operator">=</span> mpg<span class="punctuation">,</span>mapping <span class="operator">=</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> displ<span class="punctuation">,</span>y <span class="operator">=</span> hwy<span class="punctuation">,</span> color <span class="operator">=</span> drv<span class="punctuation">)</span><span class="punctuation">)</span> <span class="comment"># 颜色映射到驱动方式 `drv` 变量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 简化之后的代码</span></span><br><span class="line"></span><br><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span>aes<span class="punctuation">(</span>displ<span class="punctuation">,</span>hwy<span class="punctuation">,</span>color<span class="operator">=</span>drv<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">	geom_point<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 美学映射也可以放在几何对象中，效果同上</span></span><br><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span>aes<span class="punctuation">(</span>displ<span class="punctuation">,</span>hwy<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span></span><br><span class="line">	geom_point<span class="punctuation">(</span>aes<span class="punctuation">(</span>color<span class="operator">=</span>drv<span class="punctuation">)</span><span class="punctuation">)</span><span class="operator">+</span> <span class="comment"># 感觉这种更容易理解一些，但是这样的话只能对本层生效，不会全局生效，几何对象优先使用局部，局部没有则用全局</span></span><br><span class="line">	geom_smooth<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 加上光滑的拟合曲线，默认是局部多项式拟合</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">geom_point():散点图</span><br><span class="line">geom_line():折线图</span><br><span class="line">geom_smooth():光滑（拟合）曲线</span><br><span class="line">geom_bar()/geom_col():条形图</span><br><span class="line">geom_histogram():直方图</span><br><span class="line">geom_density():概率密度图</span><br><span class="line">geom_boxplot():箱线图</span><br><span class="line">geom_abline():参考直线</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=1586.226616">26:26</a>
+标度设置
+<code>scale_&lt;MAPPING&gt;_&lt;KIND&gt;</code>，标度函数控制几何对象中的标度映射：不只是x,y轴，还有color,fill,shape,size产生的图例。它们是数据中的连续或分类变量的可视化表示，这需要关联到标度，所以要用到映射。</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=1717.047435">28:37</a>
+常用的标度函数，对数坐标，开根号的坐标、颜色渐变等
+<ul>
+<li><img src="https://s2.loli.net/2022/04/09/anHYT5wApOft8VX.jpg"
+title="fig:" alt="image.png" /></li>
+</ul></li>
+<li>图例与坐标轴的组件：
+<ul>
+<li><img src="https://s2.loli.net/2022/04/09/rZgnkIwOGiR7tBo.jpg"
+title="fig:" alt="image.png" /></li>
+</ul></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=1922.64573">32:02</a>
+修改坐标轴刻度及标签<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=2117.171158">35:17</a>
+修改坐标轴标签为分类数据</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=2315.466976">38:35</a>
+美国经济数据时间轴日期间隔设置</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=2435.975685">40:35</a>
+修改坐标轴标签，图例名称和图例位置 <code>"none"</code> 不放图例</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=2792.049624">46:32</a>
+设置图形标题，主标题、副标题、备注，标题居中</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=3228.313318">53:48</a>
+设置 fill，color
+颜色，更建议使用RColorBrewer（调色板）或colorspace包</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=3441.791311">57:21</a>
+使用调色板的颜色、渐变色[[张敬信-R语言编程：基于tidyverse-至第3章-2021-11-07.pdf#page=233]]</li>
+<li><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=3759.214384">01:02:39</a>
+添加文字标注，添加数据标签，先选要标记的样本，<code>library(ggrepel)</code>
+<ul>
+<li><figure>
+<img src="https://s2.loli.net/2022/04/09/VphsYk8wxJMdDrn.jpg"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure></li>
+<li><p>添加文本注释<code>annotate()</code></p></li>
+</ul></li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>displ<span class="punctuation">,</span> hwy<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	annotate<span class="punctuation">(</span>geom <span class="operator">=</span> <span class="string">&quot;text&quot;</span> <span class="punctuation">,</span> x <span class="operator">=</span> <span class="number">6</span> <span class="punctuation">,</span> y <span class="operator">=</span> <span class="number">40</span><span class="punctuation">,</span></span><br><span class="line">		label ＝ <span class="string">&quot;引擎越大\n燃油效率越高!&quot;</span> <span class="punctuation">,</span> size<span class="operator">=</span> <span class="number">4</span> <span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">&quot;red&quot;</span> <span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=4236.585415">01:10:36</a>
+统计变换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">stat_bin():geom_bar(),geom_freqpoly(),</span><br><span class="line">geom_histogram()</span><br><span class="line">stat_bindot():geom_dotplot()</span><br><span class="line">stat_boxplot():geom_boxplot()</span><br><span class="line">stat_contour():geom_contour()</span><br><span class="line">stat_quantile():geom_quantile()</span><br><span class="line">stat_smooth()geom_smooth()</span><br><span class="line">stat_sum():geom_count()</span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=4630.711824">01:17:10</a>
+小提琴图 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>x <span class="operator">=</span> <span class="built_in">class</span><span class="punctuation">,</span> y <span class="operator">=</span> hwy<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_violin<span class="punctuation">(</span>trim <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span> alpha <span class="operator">=</span> <span class="number">0.5</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">&quot;green&quot;</span><span class="punctuation">)</span><span class="operator">+</span> <span class="comment"># 小提琴图</span></span><br><span class="line">	stat_summary<span class="punctuation">(</span>fun <span class="operator">=</span> mean<span class="punctuation">,</span></span><br><span class="line">		fun.min <span class="operator">=</span> <span class="keyword">function</span><span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">&#123;</span>mean<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="operator">-</span> sd<span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="comment"># 最小：均值-一倍标准差</span></span><br><span class="line">		fun.max <span class="operator">=</span> <span class="keyword">function</span><span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="punctuation">&#123;</span>mean<span class="punctuation">(</span>x<span class="punctuation">)</span> <span class="operator">+</span> sd<span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">&#125;</span><span class="punctuation">,</span> <span class="comment"># 最小：均值+一倍标准差</span></span><br><span class="line">		geom <span class="operator">=</span> <span class="string">&quot;pointrange&quot;</span><span class="punctuation">,</span> color <span class="operator">=</span> <span class="string">&quot;red&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=4716.266488">01:18:36</a>
+坐标系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">coord_flip()：坐标轴翻转，即x 轴与y 轴互换，比如绘制水平条形图</span><br><span class="line">coord_fixed(): 固定ratio = y / x 的比例</span><br><span class="line">coord_polar()：转化为极坐标系，比如条形图转为极坐标系即为饼图</span><br><span class="line">coord_trans(): 彻底的坐标变换，不同于scale_x_log10() 等</span><br><span class="line">coord_map(), coord_quickmap(): 与geom_polygon() 连用，控制地图的坐标投影</span><br><span class="line">coord_sf(): 与geom_sf() 连用，控制地图的坐标投影</span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=4838.461826">01:20:38</a>
+水平箱线图 <a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=4969.408468">01:22:49</a>
+位置调整</p>
+<p>条形图中的条形位置调整 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">position_stack(): 竖直堆叠</span><br><span class="line">position_fill(): 竖直(百分比) 堆叠，按比例放缩保证总高度为1</span><br><span class="line">position_dodge(), position_dodge2(): 水平堆叠</span><br></pre></td></tr></table></figure> <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span><span class="built_in">class</span><span class="punctuation">,</span> fill <span class="operator">=</span> drv<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="comment"># 横轴：其中车型，每个class根据不同的drv来填充颜色</span></span><br><span class="line">	geom_bar<span class="punctuation">(</span>position <span class="operator">=</span> position_dodge<span class="punctuation">(</span>preserve <span class="operator">=</span> <span class="string">&quot;single&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span> <span class="comment"># single 是为了保证只有一个drv的时候，绘制一个条形图，而不是和三个一样宽的条形图</span></span><br><span class="line"><span class="comment"># geom_bar(position = &quot;dodge&quot;)</span></span><br></pre></td></tr></table></figure></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=5198.419981">01:26:38</a>
+借助
+<code>patchwork</code>实现多个图形排布（多图排布），注意和[[R语言-分面绘图|分面绘图]]有区别，也可以用[[多图拼接]]的方法</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">library<span class="punctuation">(</span>patchwork<span class="punctuation">)</span></span><br><span class="line">p1 <span class="operator">=</span> ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>displ<span class="punctuation">,</span> hwy<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_point<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">p2 <span class="operator">=</span> ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>drv<span class="punctuation">,</span> displ<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_boxplot<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">p3 <span class="operator">=</span> ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>drv<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_bar<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">p1 <span class="operator">|</span> <span class="punctuation">(</span>p2 <span class="operator">/</span> p3<span class="punctuation">)</span> <span class="comment"># 第一列放p1,第二列放p2和p3</span></span><br></pre></td></tr></table></figure>
+<p>^gfi4cm</p>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=5312.361387">01:28:32</a>
+分面（Facet）[[R语言-分面绘图|分面绘图]]</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ggplot<span class="punctuation">(</span>mpg<span class="punctuation">,</span> aes<span class="punctuation">(</span>displ<span class="punctuation">,</span> hwy<span class="punctuation">)</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	geom_point<span class="punctuation">(</span><span class="punctuation">)</span> <span class="operator">+</span></span><br><span class="line">	facet_wrap<span class="punctuation">(</span><span class="operator">~</span> drv<span class="punctuation">,</span> scales <span class="operator">=</span> <span class="string">&quot;free&quot;</span><span class="punctuation">)</span><span class="comment"># free 表示独立坐标系，可以设置共用坐标系还是独立坐标系</span></span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=5435.756169">01:30:35</a>
+主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">theme_bw()</span><br><span class="line">theme_light()</span><br><span class="line">theme_classic()</span><br><span class="line">theme_gray(): 默认</span><br><span class="line">theme_linedraw()</span><br><span class="line">theme_dark()</span><br><span class="line">theme_minimal()</span><br><span class="line">theme_void()</span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15Y4y1H7xy?spm_id_from=333.999.0.0#t=5546.868567">01:32:26</a>
+保存[[张敬信-R语言编程：基于tidyverse-至第3章-2021-11-07.pdf#page=243]]</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">R语言</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/09/%E5%BC%A0%E6%95%AC%E4%BF%A1-R%E8%AF%AD%E8%A8%80-ggplot2%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E4%B8%B2%E8%AE%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-待阅读的参考文献" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -4569,180 +4775,6 @@ target="_blank" rel="noopener" href="https://doi.org/10.1016/j.techfore.2017.10.
 
 
   
-    <article id="post-吴江-社会网络计算基础理论与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">吴江-社会网络计算基础理论与实践</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/" class="archive-article-date">
-  	<time datetime="2022-03-21T02:32:43.362Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
-<li>备注:: 社会网络计算方法、[[R语言社会网络分析]]</li>
-<li>附件:: [[社会网络计算基础理论与实践.pdf]]</li>
-</ul>
-<hr />
-<ul>
-<li>社会网络的计算范式
-<ul>
-<li><img src="https://s2.loli.net/2022/03/21/XxdTJyfAkhOIHcw.jpg"
-title="fig:" alt="image.png" /></li>
-</ul></li>
-<li>三元闭包
-<ul>
-<li><p>三元闭包原理</p></li>
-<li><p>网络边和节点的演化</p>
-<ul>
-<li>增加节点和边</li>
-<li>节点的访问</li>
-</ul></li>
-<li><p>聚集系数：</p>
-<ul>
-<li>点聚集系数：计算三元闭包的强度，<strong>节点A的任意两个朋友彼此也是朋友的概率</strong>，节点朋友圈的紧密程度，实际相邻点对/理论相邻点对，即：边/点对<span
-class="citation" data-cites="Newman.2003">(<a href="#ref-Newman.2003"
-role="doc-biblioref">Newman, 2003</a>)</span>
-<!--复杂网络的结构和功能The structure and function of complex networks--></li>
-<li>全局聚集系数：<span
-class="math inline">\(C=\frac{\text{三角形数}×3}{\text{连通三元组数}}\)</span>，有共同朋友的两个人中，彼此也是朋友的比例，也就是共被引的文献之间存在引用关系的比例。</li>
-<li>R语言igraph包计算聚集系数</li>
-</ul></li>
-</ul></li>
-<li>嵌入性
-<ul>
-<li>Granovetter(1985)<a
-target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv4889651/">经济学与社会学的爱恨情仇，新社会经济学格兰诺维特的嵌入
-- 哔哩哔哩专栏</a></li>
-</ul></li>
-<li>结构洞
-<ul>
-<li>移除某个点，会使得网络的连通分量增加。
-<ul>
-<li>聚集系数不高</li>
-<li>信息获取优势</li>
-<li>创造性放大优势
-<ul>
-<li>同质信息——异质信息</li>
-</ul></li>
-<li>社交把关的权力</li>
-<li>介数，参见[[R语言社会网络分析#^6126d7]]</li>
-</ul></li>
-<li>使用R语言计算中心度
-<ul>
-<li>参考书：[[社会网络计算基础理论与实践.pdf]]P67+7</li>
-<li>代码可参见[[R语言社会网络分析#计算四种中心性并返回数据框]]</li>
-</ul></li>
-</ul></li>
-<li>强弱关系
-<ul>
-<li>[[高斯混合模型（GMM)]]</li>
-<li>参考文献
-<ul>
-<li><span class="citation" data-cites="vanEck.2009">(<a
-href="#ref-vanEck.2009" role="doc-biblioref">van Eck &amp; Waltman,
-2009</a>)</span>
-<!--如何规范化共现数据?一些著名的相似度量的分析How to normalize cooccurrence data? An analysis of some well-known similarity measures--></li>
-<li><a
-target="_blank" rel="noopener" href="http://blog.sciencenet.cn/blog-1557-589296.html">科学网—两类相似性测度
-- 武夷山的博文</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/yang_live/article/details/105079425">文本相似度计算：Jaccard系数，余弦相似度等_yang_live的博客-CSDN博客</a></li>
-<li><a
-target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40176087/article/details/106250648">欧式距离、余玄相似度、编辑距离、jaccard相似性区别与总结_谈笑风生...的博客-CSDN博客</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/5af7d0231ca2">技术 |
-文本聚类与分类 - 简书</a></li>
-</ul></li>
-<li>弱关系和捷径的关系验证
-<ul>
-<li>邻里重叠度（Jaccard相似度）：两节点共同邻居结点数/两节点邻居的总数</li>
-</ul></li>
-</ul></li>
-</ul>
-<h1 class="unnumbered" id="bibliography">参考文献</h1>
-<div id="refs" class="references csl-bib-body hanging-indent"
-data-line-spacing="2" role="doc-bibliography">
-<div id="ref-Newman.2003" class="csl-entry" role="doc-biblioentry">
-Newman, M. E. J. (2003). <em>The structure and function of complex
-networks</em> (Vol. 45). <span>Society for Industrial and Applied
-Mathematics</span>. <a
-target="_blank" rel="noopener" href="https://doi.org/10.1137/S003614450342480">https://doi.org/10.1137/S003614450342480</a>
-</div>
-<div id="ref-vanEck.2009" class="csl-entry" role="doc-biblioentry">
-van Eck, N. J., &amp; Waltman, L. (2009). How to normalize cooccurrence
-data? An analysis of some well-known similarity measures. <em>Journal of
-the American Society for Information Science and Technology</em>,
-<em>60</em>(8), 1635–1651. <a
-target="_blank" rel="noopener" href="https://doi.org/10.1002/asi.21075">https://doi.org/10.1002/asi.21075</a>
-</div>
-</div>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">文献</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">社会网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/21/%E5%90%B4%E6%B1%9F-%E7%A4%BE%E4%BC%9A%E7%BD%91%E7%BB%9C%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA%E4%B8%8E%E5%AE%9E%E8%B7%B5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -4857,15 +4889,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cite</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工作</a>
+                <a href="javascript:void(0)" class="js-tag color5">cite</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -4874,6 +4902,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">媒体</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工作</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -4901,11 +4933,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Quicker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">MOC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Quicker</a>
+                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -4917,7 +4953,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
+                <a href="javascript:void(0)" class="js-tag color4">R语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>
