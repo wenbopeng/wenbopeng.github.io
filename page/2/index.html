@@ -146,6 +146,456 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-专利数据分析的的思路和参考文献" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/21/%E4%B8%93%E5%88%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9A%84%E7%9A%84%E6%80%9D%E8%B7%AF%E5%92%8C%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/">专利数据分析的的思路和参考文献</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/21/%E4%B8%93%E5%88%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9A%84%E7%9A%84%E6%80%9D%E8%B7%AF%E5%92%8C%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/" class="archive-article-date">
+  	<time datetime="2022-03-21T03:38:16.241Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>附件::</li>
+<li>备注:: <a
+target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/K7cZITDrlZDiwsrmPX7eVg">直播丨专利分析可视化及图表制作班『3月25-27日』</a>,
+2022/3/19</li>
+</ul>
+<h1 id="数据可视化的思路">数据可视化的思路</h1>
+<ul>
+<li><p>[[专利分析可视化]]</p></li>
+<li><p>图的前提是有信息</p></li>
+<li><p>有了信息，之后才是考虑用技术手段快速作图</p></li>
+<li><p>原始信息→可视化工具对应的信息格式→可视化工具→图表</p></li>
+</ul>
+<h1 id="ppt框架">PPT框架</h1>
+<p>题目：专利技术层面和战略层面的分析及地图制作技巧 -
+专利技术分析的内容和方法 - 专利战略分析的内容和方法 -
+专利地图分析常用的指标及数据处理方法 - 数据格式 - 常用指标 - 分析工具 -
+分析方法 - 常见的专利分析图制作 - 申请趋势 - 技术构成 - 地域分布 -
+专利战略地图的绘制及解读 - 专利技术路线图制作 - Visio制作 -
+Excalidraw制作 - 专利技术功效图制作 - Excel制作 - R语言制作</p>
+<h1 id="原始信息">原始信息</h1>
+<ul>
+<li>专利检索平台
+<ul>
+<li>免费
+<ul>
+<li>Espacenet ⭐⭐⭐</li>
+<li>Lens</li>
+<li>Google Patent⭐</li>
+</ul></li>
+<li>收费
+<ul>
+<li>Patentics</li>
+<li>Incopat</li>
+<li>智慧芽</li>
+<li>Derwent Innovation Index（DII）</li>
+</ul></li>
+</ul></li>
+<li>法律检索平台
+<ul>
+<li>免费
+<ul>
+<li>中国裁判文书网</li>
+</ul></li>
+<li>收费
+<ul>
+<li>北大法宝</li>
+<li>北大法意</li>
+<li>Westlaw</li>
+<li>[[常用学术网址#^9aa5f9|CaseText]]</li>
+</ul></li>
+</ul></li>
+<li>学术检索平台
+<ul>
+<li>[[PPT页面]]</li>
+</ul></li>
+<li>商业检索平台
+<ul>
+<li>工商信息</li>
+<li>证券信息</li>
+<li></li>
+</ul></li>
+</ul>
+<h2 id="信息格式">信息格式</h2>
+<ul>
+<li>表格
+<ul>
+<li>Excel (xls、xlsx)</li>
+<li>CSV（逗号分隔、制表符分隔、竖线分隔）</li>
+<li>datafram（R语言和Python的分析基础）</li>
+</ul></li>
+<li>列表
+<ul>
+<li>JSON（网络数据交换常用格式，最适合javascript可视化工具）</li>
+<li>list（R语言常用）</li>
+</ul></li>
+<li>纯文本
+<ul>
+<li>CSV</li>
+<li>txt（纯文本）</li>
+<li>Markdown（轻量化的排版语言，本质是纯文本，可以展示数据的层级关系）</li>
+</ul></li>
+<li>思维导图
+<ul>
+<li>Xmind</li>
+<li>Markdown</li>
+<li><a target="_blank" rel="noopener" href="https://ajietextd.github.io/">Excalidraw | Hand-drawn look
+&amp; feel • Collaborative • Secure</a>, 2022/3/7</li>
+</ul></li>
+</ul>
+<h2 id="辅助思考">辅助思考</h2>
+<ul>
+<li>描述层次关系
+<ul>
+<li>气泡网络图</li>
+<li>树状图</li>
+<li>思维导图</li>
+</ul></li>
+<li>描述对比关系
+<ul>
+<li>气泡对比图</li>
+</ul></li>
+<li>描述流程
+<ul>
+<li>流程图</li>
+<li>泳道图</li>
+<li>甘特图</li>
+</ul></li>
+<li>描述方法
+<ul>
+<li>桥梁图</li>
+</ul></li>
+</ul>
+<h1 id="专利技术分析案例">专利技术分析案例</h1>
+<ul>
+<li>FTO分析报告中的ClaimCharts
+<ul>
+<li><a
+href="D:\我的坚果云\学习笔记\报告模板\自动路灯-FTO.xlsx">FTO报告</a></li>
+<li><a
+href="D:\我的坚果云\03工作\朋友同事\卜小军委托-有效性检索-CN103646808B%20一种带有波纹结构定位壳的编码器\分析意见\有效性检索-CN103646808B%20一种带有波纹结构定位壳的编码器.xlsx">无效检索案例</a></li>
+</ul></li>
+</ul>
+<h1 id="专利战略分析案例">专利战略分析案例</h1>
+<ul>
+<li>普通图表分析专利军备竞赛
+<ul>
+<li><span class="citation" data-cites="Jell.2017">(<a
+href="#ref-Jell.2017" role="doc-biblioref">Jell et al., 2017</a>)</span>
+<!--攻击性专利组合竞赛Offensive patent portfolio races--></li>
+</ul></li>
+<li>NPE收购行为分析
+<ul>
+<li><span class="citation" data-cites="Fischer.2012">(<a
+href="#ref-Fischer.2012" role="doc-biblioref">Fischer &amp; Henkel,
+2012</a>)</span>
+<!--对技术市场的专利巨魔-~NPE上的实证分析“专利收购Patent trolls on markets for technology – An empirical analysis of NPEs’ patent acquisitions--></li>
+</ul></li>
+<li>知识流动、四象限矩阵、网络时间切片
+<ul>
+<li><span class="citation" data-cites="Lee.2019">(<a
+href="#ref-Lee.2019" role="doc-biblioref">Lee et al., 2019</a>)</span>
+<!--从专利文件中获取有关技术融合，国际合作和知识流的信 息：以信息和通信技术为例Capturing information on technology convergence, international collaboration, and knowledge flow from patent documents: A case of information and communication technology--></li>
+</ul></li>
+<li>聚类、社会网络用于技术机会分析
+<ul>
+<li><span class="citation" data-cites="Hwang.2020">(<a
+href="#ref-Hwang.2020" role="doc-biblioref">Hwang et al.,
+2020</a>)</span>
+<!--技术机会分析: 盲人和视力受损者的辅具Technological opportunity analysis: Assistive technology for blind and visually impaired people--></li>
+</ul></li>
+<li><span class="citation" data-cites="Marco.2019">(<a
+href="#ref-Marco.2019" role="doc-biblioref">Marco et al.,
+2019</a>)</span>
+<!--专利权利要求与专利保护范围Patent claims and patent scope--></li>
+<li>桑基图
+<ul>
+<li><span class="citation" data-cites="Surana.2020b">(<a
+href="#ref-Surana.2020b" role="doc-biblioref">Surana et al.,
+2020</a>)</span>
+<!--技术复杂性对全球价值链上风电产业制造区位形成和演变的影响Effects of technology complexity on the emergence and evolution of wind industry manufacturing locations along global value chains--></li>
+</ul></li>
+<li><span class="citation" data-cites="Farrukh.2017">(<a
+href="#ref-Farrukh.2017" role="doc-biblioref">Farrukh et al.,
+2017</a>)</span>
+<!--主题路线图和绩效维度指导科技商业化Topic roadmapping and performance dimensions-guiding technology commercialisation--></li>
+<li>技术路线图
+<ul>
+<li><span class="citation" data-cites="Yu.2019">(<a href="#ref-Yu.2019"
+role="doc-biblioref">Yu &amp; Zhang, 2019</a>)</span>
+<!--从技术革命中获得优势：竞争分析和战略规划的专利路线图Obtaining advantages from technology revolution: A patent roadmap for competition analysis and strategy planning--></li>
+</ul></li>
+<li>经济复杂度、聚类图、网络图、排名图、对称坐标图
+<ul>
+<li><span class="citation" data-cites="Hidalgo.2009">(<a
+href="#ref-Hidalgo.2009" role="doc-biblioref">Hidalgo &amp; Hausmann,
+2009</a>)</span>
+<!--构成经济复杂性的基本要素The building blocks of economic complexity--></li>
+</ul></li>
+<li><span class="citation" data-cites="Tang.0000">(<a
+href="#ref-Tang.0000" role="doc-biblioref">Tang &amp; Tietze</a>)</span>
+<!--知识产权战略轨迹。一种新的可视化方法Intellectual property strategy trajectory: A new visualisation approach--></li>
+<li><span class="citation" data-cites="Yip.2019">(<a
+href="#ref-Yip.2019" role="doc-biblioref">Yip &amp; Ilevbare,
+2019</a>)</span>
+<!--早期新产品和服务设计过程-图形表示的使用Early stage new product and service design process - the use of graphical representations--></li>
+<li><span class="citation" data-cites="Mitchell.2018">(<a
+href="#ref-Mitchell.2018" role="doc-biblioref">Mitchell et al.,
+2018</a>)</span>
+<!--评估和选择早期技术和创新项目的评分方法Scoring methods for evaluating and selecting early stage technology and innovation projects--></li>
+<li><span class="citation" data-cites="Farrukh.2017">(<a
+href="#ref-Farrukh.2017" role="doc-biblioref">Farrukh et al.,
+2017</a>)</span>
+<!--主题路线图和绩效维度指导科技商业化Topic roadmapping and performance dimensions-guiding technology commercialisation--></li>
+<li>探索专利分析的未来
+<ul>
+<li><span class="citation" data-cites="Leonidas.2017">(<a
+href="#ref-Leonidas.2017" role="doc-biblioref">Leonidas &amp; Tietze,
+2017</a>)</span>
+<!--探索专利分析的未来Exploring the future of patent analytics: a technology roadmapping approach-->本文正式发表于<span
+class="citation" data-cites="Aristodemou.2018">(<a
+href="#ref-Aristodemou.2018" role="doc-biblioref">Aristodemou &amp;
+Tietze, 2018</a>)</span>
+<!--知识产权分析（IPA）的最新技术：有关人工智能，机器学习和深度学习方法的文献综述，用于分析知识产权（IP）数据The state-of-the-art on Intellectual Property Analytics (IPA): A literature review on artificial intelligence, machine learning and deep learning methods for analysing intellectual property (IP) data--></li>
+</ul></li>
+<li><span class="citation" data-cites="Taminiau.2019">(<a
+href="#ref-Taminiau.2019" role="doc-biblioref">Taminiau &amp; Phaal,
+2019</a>)</span>
+<!--为早期创新企业提供资金-一个以价值为导向的路线图~框架Financing early stage innovation ventures – a value-oriented roadmapping framework--></li>
+<li><span class="citation" data-cites="Ringland.2020">(<a
+href="#ref-Ringland.2020" role="doc-biblioref">Ringland et al.,
+2020</a>)</span>
+<!--场景和路线图-如何应对不确定的未来Scenarios and roadmapping - how to navigate an uncertain future--></li>
+<li><span class="citation" data-cites="Granstrand.2013">(<a
+href="#ref-Granstrand.2013" role="doc-biblioref">Granstrand &amp;
+Holgersson, 2013</a>)</span>
+<!--管理知识产权拆解问题Managing the intellectual property disassembly problem--></li>
+<li>时间线图
+<ul>
+<li><span class="citation" data-cites="Holgersson.2018">(<a
+href="#ref-Holgersson.2018" role="doc-biblioref">Holgersson et al.,
+2018</a>)</span>
+<!--创新生态系统中知识产权战略的演变：发现互补和替代的专有制度The evolution of intellectual property strategy in innovation ecosystems: Uncovering complementary and substitute appropriability regimes--></li>
+</ul></li>
+<li>社会网络
+<ul>
+<li><span class="citation" data-cites="Goeldner.2015">(<a
+href="#ref-Goeldner.2015" role="doc-biblioref">Goeldner et al.,
+2015</a>)</span>
+<!--护理机器人技术的出现-专利和出版物分析The emergence of care robotics — A patent and publication analysis--></li>
+</ul></li>
+<li>动态能力视图
+<ul>
+<li><span class="citation" data-cites="Lütjen.2019">(<a
+href="#ref-Lütjen.2019" role="doc-biblioref">Lütjen et al.,
+2019</a>)</span>
+<!--管理用于服务创新的生态系统：动态能力视图Managing ecosystems for service innovation: A dynamic capability view--></li>
+</ul></li>
+<li>象限图
+<ul>
+<li>[[Gartner魔力象限图]]</li>
+</ul></li>
+</ul>
+<h1 class="unnumbered" id="bibliography">参考文献</h1>
+<div id="refs" class="references csl-bib-body hanging-indent"
+data-line-spacing="2" role="doc-bibliography">
+<div id="ref-Aristodemou.2018" class="csl-entry" role="doc-biblioentry">
+Aristodemou, L., &amp; Tietze, F. (2018). The state-of-the-art on
+intellectual property analytics (IPA): A literature review on artificial
+intelligence, machine learning and deep learning methods for analysing
+intellectual property (IP) data. <em>World Patent Information</em>,
+<em>55</em>(7), 37–51. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.wpi.2018.07.002">https://doi.org/10.1016/j.wpi.2018.07.002</a>
+</div>
+<div id="ref-Farrukh.2017" class="csl-entry" role="doc-biblioentry">
+Farrukh, C., Athanassopoulou, N., &amp; Phaal, R. (2017). <em>Topic
+roadmapping and performance dimensions</em>. <span>CTM working paper
+series</span>; <span>Apollo - University of Cambridge Repository</span>.
+<a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.13941">https://doi.org/10.17863/CAM.13941</a>
+</div>
+<div id="ref-Fischer.2012" class="csl-entry" role="doc-biblioentry">
+Fischer, T., &amp; Henkel, J. (2012). Patent trolls on markets for
+technology – an empirical analysis of NPEs’ patent acquisitions.
+<em>Research Policy</em>, <em>41</em>(9), 1519–1533. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.respol.2012.05.002">https://doi.org/10.1016/j.respol.2012.05.002</a>
+</div>
+<div id="ref-Goeldner.2015" class="csl-entry" role="doc-biblioentry">
+Goeldner, M., Herstatt, C., &amp; Tietze, F. (2015). The emergence of
+care robotics — a patent and publication analysis. <em>Technological
+Forecasting and Social Change</em>, <em>92</em>, 115–131. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.techfore.2014.09.005">https://doi.org/10.1016/j.techfore.2014.09.005</a>
+</div>
+<div id="ref-Granstrand.2013" class="csl-entry" role="doc-biblioentry">
+Granstrand, O., &amp; Holgersson, M. (2013). Managing the intellectual
+property disassembly problem. <em>California Management Review</em>,
+<em>55</em>(4), 184–210. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1525/cmr.2013.55.4.184">https://doi.org/10.1525/cmr.2013.55.4.184</a>
+</div>
+<div id="ref-Hidalgo.2009" class="csl-entry" role="doc-biblioentry">
+Hidalgo, C. A., &amp; Hausmann, R. (2009). The building blocks of
+economic complexity. <em>Proceedings of the National Academy of
+Sciences</em>, <em>106</em>(26), 10570–10575. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1073/pnas.0900943106">https://doi.org/10.1073/pnas.0900943106</a>
+</div>
+<div id="ref-Holgersson.2018" class="csl-entry" role="doc-biblioentry">
+Holgersson, M., Granstrand, O., &amp; Bogers, M. (2018). The evolution
+of intellectual property strategy in innovation ecosystems: Uncovering
+complementary and substitute appropriability regimes. <em>Long Range
+Planning</em>, <em>51</em>(2), 303–319. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.lrp.2017.08.007">https://doi.org/10.1016/j.lrp.2017.08.007</a>
+</div>
+<div id="ref-Hwang.2020" class="csl-entry" role="doc-biblioentry">
+Hwang, J., Kim, K. H., Hwang, J. G., Jun, S., Yu, J., &amp; Lee, C.
+(2020). Technological opportunity analysis: Assistive technology for
+blind and visually impaired people. <em>Sustainability</em>,
+<em>12</em>(20), 8689. <a
+target="_blank" rel="noopener" href="https://doi.org/10.3390/su12208689">https://doi.org/10.3390/su12208689</a>
+</div>
+<div id="ref-Jell.2017" class="csl-entry" role="doc-biblioentry">
+Jell, F., Henkel, J., &amp; Wallin, M. W. (2017). Offensive patent
+portfolio races. <em>Long Range Planning</em>, <em>50</em>(5), 531–549.
+<a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.lrp.2016.03.003">https://doi.org/10.1016/j.lrp.2016.03.003</a>
+</div>
+<div id="ref-Lee.2019" class="csl-entry" role="doc-biblioentry">
+Lee, C., Kogler, D. F., &amp; Lee, D. (2019). Capturing information on
+technology convergence, international collaboration, and knowledge flow
+from patent documents: A case of information and communication
+technology. <em>Information Processing <span>&amp;</span>
+Management</em>, <em>56</em>(4), 1576–1591. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.ipm.2018.09.007">https://doi.org/10.1016/j.ipm.2018.09.007</a>
+</div>
+<div id="ref-Leonidas.2017" class="csl-entry" role="doc-biblioentry">
+Leonidas, A., &amp; Tietze, F. (2017). <em>Exploring the future of
+patent analytics: A technology roadmapping approach</em>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.13967">https://doi.org/10.17863/CAM.13967</a>
+</div>
+<div id="ref-Lütjen.2019" class="csl-entry" role="doc-biblioentry">
+Lütjen, H., Schultz, C., Tietze, F., &amp; Urmetzer, F. (2019). Managing
+ecosystems for service innovation: A dynamic capability view.
+<em>Journal of Business Research</em>, <em>104</em>, 506–519. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.jbusres.2019.06.001">https://doi.org/10.1016/j.jbusres.2019.06.001</a>
+</div>
+<div id="ref-Marco.2019" class="csl-entry" role="doc-biblioentry">
+Marco, A. C., Sarnoff, J. D., &amp; deGrazia, C. A. W. (2019). Patent
+claims and patent scope. <em>Research Policy</em>, <em>48</em>(9),
+103790. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.respol.2019.04.014">https://doi.org/10.1016/j.respol.2019.04.014</a>
+</div>
+<div id="ref-Mitchell.2018" class="csl-entry" role="doc-biblioentry">
+Mitchell, R., Phaal, R., &amp; Athanassopoulou, N. (2018). <em>Scoring
+methods for evaluating and selecting early stage technology and
+innovation projects</em>. <span>Apollo - University of Cambridge
+Repository</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.21297">https://doi.org/10.17863/CAM.21297</a>
+</div>
+<div id="ref-Ringland.2020" class="csl-entry" role="doc-biblioentry">
+Ringland, G., Ilevbare, I., Athanassopoulou, N., Greenaway, A.-M., &amp;
+Phaal, R. (2020). <em>Scenarios and roadmapping - how to navigate an
+uncertain future</em>. <span>Apollo - University of Cambridge
+Repository</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.54145">https://doi.org/10.17863/CAM.54145</a>
+</div>
+<div id="ref-Surana.2020b" class="csl-entry" role="doc-biblioentry">
+Surana, K., Doblinger, C., Anadon, L. D., &amp; Hultman, N. (2020).
+Effects of technology complexity on the emergence and evolution of wind
+industry manufacturing locations along global value chains. <em>Nature
+Energy</em>, <em>5</em>(10), 811–821. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1038/s41560-020-00685-6">https://doi.org/10.1038/s41560-020-00685-6</a>
+</div>
+<div id="ref-Taminiau.2019" class="csl-entry" role="doc-biblioentry">
+Taminiau, P.-T., &amp; Phaal, R. (2019). <em>Financing early stage
+innovation ventures – a value-oriented roadmapping framework</em>.
+<span>Apollo - University of Cambridge Repository</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.46897">https://doi.org/10.17863/CAM.46897</a>
+</div>
+<div id="ref-Tang.0000" class="csl-entry" role="doc-biblioentry">
+Tang, A., &amp; Tietze, F. <em>Intellectual property strategy
+trajectory: A new visualisation approach</em>. <span>Apollo - University
+of Cambridge Repository</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.75500">https://doi.org/10.17863/CAM.75500</a>
+</div>
+<div id="ref-Yip.2019" class="csl-entry" role="doc-biblioentry">
+Yip, M. H., &amp; Ilevbare, I. (2019). <em>Early stage new product and
+service design process - the use of graphical representations</em>.
+<span>Apollo - University of Cambridge Repository</span>. <a
+target="_blank" rel="noopener" href="https://doi.org/10.17863/CAM.35690">https://doi.org/10.17863/CAM.35690</a>
+</div>
+<div id="ref-Yu.2019" class="csl-entry" role="doc-biblioentry">
+Yu, X., &amp; Zhang, B. (2019). Obtaining advantages from technology
+revolution: A patent roadmap for competition analysis and strategy
+planning. <em>Technological Forecasting and Social Change</em>,
+<em>145</em>, 273–283. <a
+target="_blank" rel="noopener" href="https://doi.org/10.1016/j.techfore.2017.10.008">https://doi.org/10.1016/j.techfore.2017.10.008</a>
+</div>
+</div>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/21/%E4%B8%93%E5%88%A9%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E7%9A%84%E7%9A%84%E6%80%9D%E8%B7%AF%E5%92%8C%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-吴江-社会网络计算基础理论与实践" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1562,15 +2012,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">cite</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cite,</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">cite</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1582,15 +2032,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">R语言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">教程</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">工作</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">专利法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">法条</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1606,7 +2060,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">可视化</a>
+                <a href="javascript:void(0)" class="js-tag color4">专利法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">法条</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">标准</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1614,11 +2076,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MOC</a>
+                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">综述,</a>
+                <a href="javascript:void(0)" class="js-tag color4">MOC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1627,14 +2089,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">R语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">教程</a>
               </li>
             
             <div class="clearfix"></div>
