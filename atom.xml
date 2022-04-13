@@ -6,7 +6,7 @@
   <link href="https://wenbopeng.github.io/atom.xml" rel="self"/>
   
   <link href="https://wenbopeng.github.io/"/>
-  <updated>2022-04-13T03:28:48.780Z</updated>
+  <updated>2022-04-13T03:36:15.399Z</updated>
   <id>https://wenbopeng.github.io/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>基于EnjoyLearningLanguages插件获得YouTube字幕时间戳并实现Obsidian复用</title>
+    <title>基于EnjoyLearningLanguages插件获得YouTube字幕时间戳</title>
     <link href="https://wenbopeng.github.io/2022/04/13/%E5%9F%BA%E4%BA%8EEnjoyLearningLanguages%E6%8F%92%E4%BB%B6%E8%8E%B7%E5%BE%97YouTube%E5%AD%97%E5%B9%95%E6%97%B6%E9%97%B4%E6%88%B3/"/>
     <id>https://wenbopeng.github.io/2022/04/13/%E5%9F%BA%E4%BA%8EEnjoyLearningLanguages%E6%8F%92%E4%BB%B6%E8%8E%B7%E5%BE%97YouTube%E5%AD%97%E5%B9%95%E6%97%B6%E9%97%B4%E6%88%B3/</id>
     <published>2022-04-13T03:27:52.892Z</published>
-    <updated>2022-04-13T03:28:48.780Z</updated>
+    <updated>2022-04-13T03:36:15.399Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul><li>附件::</li><li>备注:: <ahref="https://chrome.google.com/webstore/detail/enjoy-learning-languages/cnppaiifcooegmendcabeagbgnhhjoea">EnjoyLearning Languages - Chrome 网上应用店</a>, 2022/4/13</li></ul><h1 id="安装插件">安装插件</h1><p>地址：<ahref="https://chrome.google.com/webstore/detail/enjoy-learning-languages/cnppaiifcooegmendcabeagbgnhhjoea">EnjoyLearning Languages - Chrome 网上应用店</a>, 2022/4/13</p><h1 id="获得字幕翻译及上下文">获得字幕翻译及上下文</h1><figure><img src="https://s2.loli.net/2022/04/13/MqWv6JIyHAXdcVC.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h1 id="点击五角星收藏喜欢的句子">点击五角星收藏喜欢的句子</h1><p><img src="https://s2.loli.net/2022/04/13/TcaHREmOgvISf5i.jpg"alt="image.png" /> # 获得时间戳</p><p>复制收藏区的字幕文字获得字幕及时间戳：</p><figure><img src="https://s2.loli.net/2022/04/13/ghY1i69ZSzvl7r4.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[![](chrome-extension://cnppaiifcooegmendcabeagbgnhhjoea/assets/youtube.png)](https://youtu.be/AWUk8-6yG2g?t=505)</span><br><span class="line"></span><br><span class="line">I can&#x27;t help but question Roam&#x27;s value</span><br><span class="line"></span><br><span class="line">我不禁质疑 Roam 的价值。</span><br><span class="line"></span><br><span class="line">[![](chrome-extension://cnppaiifcooegmendcabeagbgnhhjoea/assets/youtube.png)](https://youtu.be/AWUk8-6yG2g?t=376)</span><br><span class="line"></span><br><span class="line">of arrogance or elitism on the part of the Roam team</span><br><span class="line"></span><br><span class="line">傲慢或精英主义令人费解的例子</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="改成obsidian的时间戳">改成Obsidian的时间戳</h1><p>删除中括号中多余的内容，最重要的一点是，要把<code>t=seconds</code>改成 <code>#t=seconds</code>，如图：</p><figure><img src="https://s2.loli.net/2022/04/13/lTBIJCRt2irbnYc.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[](https://youtu.be/AWUk8-6yG2g?#t=505)</span><br><span class="line"></span><br><span class="line">I can&#x27;t help but question Roam&#x27;s value</span><br><span class="line"></span><br><span class="line">我不禁质疑 Roam 的价值。</span><br><span class="line"></span><br><span class="line">[](https://youtu.be/AWUk8-6yG2g?#t=376)</span><br><span class="line"></span><br><span class="line">of arrogance or elitism on the part of the Roam team</span><br><span class="line"></span><br><span class="line">傲慢或精英主义令人费解的例子</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul><li>附件::</li><li>备注:: <ahref="https://chrome.google.com/webstore/detail/enjoy-learning-languages/cnppaiifcooegmendcabeagbgnhhjoea">EnjoyLearning Languages - Chrome 网上应用店</a>, 2022/4/13</li></ul><h1 id="安装插件">安装插件</h1><p>地址：<ahref="https://chrome.google.com/webstore/detail/enjoy-learning-languages/cnppaiifcooegmendcabeagbgnhhjoea">EnjoyLearning Languages - Chrome 网上应用店</a>, 2022/4/13</p><h1 id="获得字幕翻译及上下文">获得字幕翻译及上下文</h1><figure><img src="https://s2.loli.net/2022/04/13/MqWv6JIyHAXdcVC.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h1 id="点击五角星收藏喜欢的句子">点击五角星收藏喜欢的句子</h1><figure><img src="https://s2.loli.net/2022/04/13/TcaHREmOgvISf5i.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><h1 id="获得时间戳">获得时间戳</h1><p>复制收藏区的字幕文字获得字幕及时间戳：</p><figure><img src="https://s2.loli.net/2022/04/13/ghY1i69ZSzvl7r4.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[![](chrome-extension://cnppaiifcooegmendcabeagbgnhhjoea/assets/youtube.png)](https://youtu.be/AWUk8-6yG2g?t=505)</span><br><span class="line"></span><br><span class="line">I can&#x27;t help but question Roam&#x27;s value</span><br><span class="line"></span><br><span class="line">我不禁质疑 Roam 的价值。</span><br><span class="line"></span><br><span class="line">[![](chrome-extension://cnppaiifcooegmendcabeagbgnhhjoea/assets/youtube.png)](https://youtu.be/AWUk8-6yG2g?t=376)</span><br><span class="line"></span><br><span class="line">of arrogance or elitism on the part of the Roam team</span><br><span class="line"></span><br><span class="line">傲慢或精英主义令人费解的例子</span><br><span class="line"></span><br></pre></td></tr></table></figure><h1 id="改成obsidian的时间戳">改成Obsidian的时间戳</h1><p>删除中括号中多余的内容，最重要的一点是，要把<code>t=seconds</code>改成 <code>#t=seconds</code>，如图：</p><figure><img src="https://s2.loli.net/2022/04/13/lTBIJCRt2irbnYc.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[](https://youtu.be/AWUk8-6yG2g?#t=505)</span><br><span class="line"></span><br><span class="line">I can&#x27;t help but question Roam&#x27;s value</span><br><span class="line"></span><br><span class="line">我不禁质疑 Roam 的价值。</span><br><span class="line"></span><br><span class="line">[](https://youtu.be/AWUk8-6yG2g?#t=376)</span><br><span class="line"></span><br><span class="line">of arrogance or elitism on the part of the Roam team</span><br><span class="line"></span><br><span class="line">傲慢或精英主义令人费解的例子</span><br></pre></td></tr></table></figure><h1 id="最终效果">最终效果</h1><p>点击句子前面的跳转符号，即可在Obsidian内部开启时间戳对应的视频片段</p><figure><img src="https://s2.loli.net/2022/04/13/cn23MRqFxY6D9ew.jpg"alt="image.png" /><figcaption aria-hidden="true">image.png</figcaption></figure>]]></content>
     
     
       
@@ -40,6 +40,8 @@ href=&quot;h</summary>
     <category term="工具" scheme="https://wenbopeng.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
     
     <category term="媒体" scheme="https://wenbopeng.github.io/tags/%E5%AA%92%E4%BD%93/"/>
+    
+    <category term="ZK" scheme="https://wenbopeng.github.io/tags/ZK/"/>
     
   </entry>
   
@@ -89,13 +91,13 @@ href=&quot;h</summary>
     
     
     
-    <category term="媒体" scheme="https://wenbopeng.github.io/tags/%E5%AA%92%E4%BD%93/"/>
-    
     <category term="R语言" scheme="https://wenbopeng.github.io/tags/R%E8%AF%AD%E8%A8%80/"/>
     
     <category term="可视化" scheme="https://wenbopeng.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
     
     <category term="教程" scheme="https://wenbopeng.github.io/tags/%E6%95%99%E7%A8%8B/"/>
+    
+    <category term="媒体" scheme="https://wenbopeng.github.io/tags/%E5%AA%92%E4%BD%93/"/>
     
   </entry>
   
@@ -264,9 +266,9 @@ href=&quot;h</summary>
     
     
     
-    <category term="R" scheme="https://wenbopeng.github.io/tags/R/"/>
-    
     <category term="媒体" scheme="https://wenbopeng.github.io/tags/%E5%AA%92%E4%BD%93/"/>
+    
+    <category term="R" scheme="https://wenbopeng.github.io/tags/R/"/>
     
   </entry>
   
