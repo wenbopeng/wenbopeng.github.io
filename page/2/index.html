@@ -146,6 +146,129 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tidyverse包学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/21/tidyverse%E5%8C%85%E5%AD%A6%E4%B9%A0/">tidyverse包学习</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/21/tidyverse%E5%8C%85%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2022-03-21T08:28:18.481Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>附件::<a href="D:\Research\R\tidyverse">地址</a>|<a
+href="">代码</a>|<a href="">结果</a></li>
+<li>备注:: 数据整理的方法视频，<a
+target="_blank" rel="noopener" href="https://www.tidyverse.org/">Tidyverse官网</a></li>
+<li>什么是tidy data:<a
+target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=wCscZLKDpCs">(432) R Programming
+Tidyverse: What is tidy data? (tidy-01) - YouTube</a></li>
+<li>R tidyverse 介绍：<a
+target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=2TZYeFcJQIk">(432) R and the
+Tidyverse: next steps - YouTube</a></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.sohu.com/a/201001817_652510">代码整洁之道：tidyverse风格简介</a></li>
+<li>参考书
+<ul>
+<li><a target="_blank" rel="noopener" href="https://r4ds.had.co.nz/">R数据科学</a></li>
+</ul></li>
+</ul>
+<p>[[R语言MOC]]</p>
+<hr />
+<h1 id="tidyverse包">tidyverse包</h1>
+<h2 id="加载包">加载包</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">library(tidyverse)</span><br></pre></td></tr></table></figure>
+<h2 id="案例数据">案例数据</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table1;table2;table3;table4a;table4b</span><br></pre></td></tr></table></figure>
+<h2 id="添加一列mutate函数">添加一列，mutate函数</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table1 %&gt;%</span><br><span class="line">  mutate(rate = cases/population*10000)</span><br></pre></td></tr></table></figure>
+<h2
+id="宽表变长表非变量列名整合成观测值gather函数">宽表变长表，非变量列名整合成观测值,gather函数</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tidy4a &lt;- table4a %&gt;%</span><br><span class="line">  gather(&quot;1999&quot;,&quot;2000&quot;,key = &quot;year&quot;,value = &quot;cases&quot;)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/019311493a4c">数据框塑形——Tidyr vs
+Reshape2 - 简书</a> ，另参见</p>
+<p>[[数据转换与分组操作#长宽表转换]]</p>
+<h2
+id="先tidy化表格然后根据内容匹配并tidy化left_joinright_join函数">先tidy化表格，然后根据内容匹配并tidy化，left_join/right_join函数</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tidy4b &lt;- table4b %&gt;%</span><br><span class="line">  gather(&quot;1999&quot;,&quot;2000&quot;,key = &quot;year&quot;,value = &quot;population&quot;)</span><br><span class="line">left_join(tidy4a,tidy4b)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tidy4a;tidy4b</span><br></pre></td></tr></table></figure>
+<h2
+id="长表变宽表把观测值内容还原成变量spread函数">长表变宽表，把观测值内容还原成变量，spread函数</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">table2 %&gt;%</span><br><span class="line">  spread(key = type,value = count)</span><br></pre></td></tr></table></figure>
+<h2
+id="总结tidyr包gather-spreadpivot_longer-pivot_wider都可以实现长宽表转换">总结：tidyr包gather
+&amp; spread，pivot_longer &amp; pivot_wider都可以实现长宽表转换</h2>
+<p><code>tidyr</code>是哈德利大神<a target="_blank" rel="noopener" href="http://hadley.nz/">Hadley
+Wickham</a>的神作<code>tidyverse</code>中的成员。专注数据框整理，除了<code>gather</code>和<code>spread</code>还有</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pivot_longer(</span><br><span class="line">  data,</span><br><span class="line">  cols,</span><br><span class="line">  names_to = &quot;name&quot;,</span><br><span class="line">  values_to = &quot;value&quot;)</span><br><span class="line"></span><br><span class="line">pivot_wider(</span><br><span class="line">  data,</span><br><span class="line">  id_cols = NULL,</span><br><span class="line">  names_from = name,</span><br><span class="line">  values_from = value)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/21/tidyverse%E5%8C%85%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-正则表达式学习笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1393,11 +1516,11 @@ target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Gener
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
         		</li>
       		
 		</ul>
@@ -2266,10 +2389,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">cite</a>
               </li>
              
@@ -2290,7 +2409,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">工具/在线</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2310,10 +2437,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">工具/在线</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">专利法</a>
               </li>
              
@@ -2330,7 +2453,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">MOC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">综述,</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">政治经济</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2339,10 +2470,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">计量</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">MOC</a>
               </li>
             
             <div class="clearfix"></div>
