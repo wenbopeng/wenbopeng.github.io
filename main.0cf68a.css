@@ -2237,7 +2237,7 @@ pre .css~* .id,pre .id {
 }
 
 .article-entry ol,.article-entry ul {
-	font-size: 14px;
+	/* font-size: 18px; */
 	margin: 10px 0
 }
 
