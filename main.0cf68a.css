@@ -318,7 +318,7 @@ body {
 	font-size: 14px;
 	font-family: Helvetica Neue,Helvetica,STHeiTi,Arial,sans-serif;
 	line-height: 1.5;
-	color: rgb(255, 255, 255) !important;
+	color: #d5d4d4 !important;
 	background-color: #fff;
 	min-height: 100%
 }
@@ -345,7 +345,7 @@ progress {
 a {
 	background: transparent;
 	text-decoration: none;
-	color: #08c
+	color: #00aaff
 }
 
 a:active {
@@ -791,7 +791,7 @@ body {
 	position: absolute;
 	right: 0;
 	min-height: 100%;
-	background: #2a2f4a;
+	background: #24292E;
 	left: 300px;
 	width: auto
 }
@@ -806,7 +806,7 @@ body {
 }
 
 .left-col {
-	background: #2a2f4a;
+	background: #24292E;
 	width: 300px;
 	position: fixed;
 	opacity: 1;
@@ -2027,7 +2027,7 @@ pre .css~* .id,pre .id {
 	border: 1px solid #ddd;
 	border-top: 1px solid #fff;
 	border-bottom: 1px solid #fff;
-	background: #2a2f4a;
+	background: #24292E;
 	transition: all .2s ease-in
 }
 
@@ -2189,15 +2189,16 @@ pre .css~* .id,pre .id {
 .article-entry li code,.article-entry p code {
 	padding: 1px 3px;
 	margin: 0 3px;
-	background: #ddd;
-	border: 1px solid #ccc;
+	color: yellow;
+	background: rgb(0, 0, 0);
+	/* border: 1px solid #ccc; */
 	font-family: Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
 	word-wrap: break-word;
-	font-size: 14px
+	font-size: 15px
 }
 
 .article-entry blockquote {
-	background: #000000;
+	background: #24292e;
 	border-left: 5px solid #ccc;
 	padding: 15px 20px;
 	margin-top: 10px;
