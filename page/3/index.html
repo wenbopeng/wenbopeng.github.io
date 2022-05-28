@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://wenbopeng.github.io">
-  <title>Archives: 2022/4 | 彭文波的博客</title>
+  <title>彭文波的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="彭文波的博客">
-<meta property="og:url" content="https://wenbopeng.github.io/archives/2022/04/index.html">
+<meta property="og:url" content="https://wenbopeng.github.io/page/3/index.html">
 <meta property="og:site_name" content="彭文波的博客">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="John Doe">
@@ -146,200 +146,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-薛老师stata课堂" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/03/20/%E8%96%9B%E8%80%81%E5%B8%88stata%E8%AF%BE%E5%A0%82/">薛老师stata课堂</a>
+    </h1>
+  
+
+        
+        <a href="/2022/03/20/%E8%96%9B%E8%80%81%E5%B8%88stata%E8%AF%BE%E5%A0%82/" class="archive-article-date">
+  	<time datetime="2022-03-20T13:57:51.340Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-20</time>
+</a>
+        
+      </header>
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
+<li>附件:: <a href="">地址</a>|<a href="">代码</a>|<a
+href="">结果</a></li>
+<li>备注::</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*——————————————</span><br><span class="line">逐步回归</span><br><span class="line">——————————————*/</span><br><span class="line">stepwize,pr(0.2): regress y (x1) (x2) (x3)</span><br><span class="line"></span><br><span class="line">/*——————————————</span><br><span class="line">分位数回归</span><br><span class="line">——————————————*/</span><br></pre></td></tr></table></figure>
+<p><a
+href="D:\我的坚果云\博士课程\计量经济学\Stata学习\macro.dta">数据地址</a>
+逐步回归 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stepwize,pr(0.2): regress y (x1) (x2) (x3)</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>分位数回归 - 不想研究均值，只想研究高回报的风险、学习好的影响因素 -
+分位数回归，研究在不同的回报率水平下，其回报率是多少 - <code>统计</code>
+→ <code>非参数分析</code> → <code>分位数回归</code> -
+<code>同时分位数回归</code> ，<code>自助法重复次数</code> - 后验估计</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">qreq y x,quantile(50)//分位数回归</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sqreg ermsoft ersandp, quantiles(10,20,30,40,50,60,70,80,90) reps(20)//同时分位数回归</span><br><span class="line">test (_b[q10:ersandp] = _b[q20:ersandp])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>主成分分析 - 变量共线性问题，影响推断的结果 -
+要找到几个主成分，能够代表xi的信息，且主成分之间不相关 -
+变量个数减少了，相关度降低了，预测效果也提高了</p>
+<p>主成分分析（principal components analysis，PCA）
+探索性因子分析中常用的一种因子提取方法。在这种方法中，单位相关系数（即1.0）作为因子分析矩阵的对角线元素。如果假设分析中每个观测变量对题项集合的共享方差具有同等贡献，那么这是一种更优的因子提取方法。
+- 如果相关性很弱，就不需要主成分分析 - p1-k=αxi-k的线性组合 -
+因子载荷：α - 要满足因子载荷的平方和为1 - 主成分排序 -
+主成分回归之后估计值是有偏估计，其和无偏估计的β之间的关系是线性关系 -
+主成分对回归的变量单位比较敏感 #重要 -
+通常应该对变量进行标准化，不要单位，减去均值除以标准差
+[[数据标准化方法]] -
+主成分可以解释自变量的变化，但不一定能解释因变量的变化，可以替代自变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">利率案例</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="https://pic.rmb.bdstatic.com/bjh/753efb869c9fb51bba8e2ce6915b4e4e.jpeg"
+alt="image.png" />
+<figcaption aria-hidden="true">image.png</figcaption>
+</figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/21/%E6%A0%87%E5%87%86%E5%88%B6%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2022-04-21T12:06:40.350Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/21/%E6%A0%87%E5%87%86%E5%88%B6%E5%AE%9A%E7%9A%84%E7%A8%8B%E5%BA%8F/">标准制定的程序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">专利法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">stata</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">标准</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">计量</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/03/20/%E8%96%9B%E8%80%81%E5%B8%88stata%E8%AF%BE%E5%A0%82/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/21/%E5%9B%9E%E5%BD%92%20Obsidian%20%E7%9A%84%E7%BA%AF%E4%B8%8E%E7%9C%9F%EF%BC%8C%E5%86%99%E7%BB%99%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/" class="archive-article-date">
-  	<time datetime="2022-04-21T11:52:47.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-21</time>
-</a>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/21/%E5%9B%9E%E5%BD%92%20Obsidian%20%E7%9A%84%E7%BA%AF%E4%B8%8E%E7%9C%9F%EF%BC%8C%E5%86%99%E7%BB%99%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E5%85%A5%E9%97%A8%E6%8C%87%E5%8D%97/">普通人的Obsidian入门指南阅读笔记</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Obsidian</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/13/%E5%9F%BA%E4%BA%8EEnjoyLearningLanguages%E6%8F%92%E4%BB%B6%E8%8E%B7%E5%BE%97YouTube%E5%AD%97%E5%B9%95%E6%97%B6%E9%97%B4%E6%88%B3/" class="archive-article-date">
-  	<time datetime="2022-04-13T03:27:52.892Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/13/%E5%9F%BA%E4%BA%8EEnjoyLearningLanguages%E6%8F%92%E4%BB%B6%E8%8E%B7%E5%BE%97YouTube%E5%AD%97%E5%B9%95%E6%97%B6%E9%97%B4%E6%88%B3/">基于EnjoyLearningLanguages插件获得YouTube字幕时间戳</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ZK</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/04/09/R%E8%AF%AD%E8%A8%80-ggplot2%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2022-04-09T14:58:21.044Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/04/09/R%E8%AF%AD%E8%A8%80-ggplot2%E7%BB%98%E5%9B%BE%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">R语言-ggplot2绘图语法学习笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">R语言</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">教程</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">媒体</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
   
-
-    
 
 
           </div>
@@ -361,9 +282,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: false,
+		isHome: true,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
