@@ -146,6 +146,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-一个Pandoc自动生成Word的模板问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/11/04/%E4%B8%80%E4%B8%AAPandoc%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Word%E7%9A%84%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/">Pandoc自动生成Word时,脚注分隔符为什么被强制缩进2字符?</a>
+    </h1>
+  
+
+        
+        <a href="/2022/11/04/%E4%B8%80%E4%B8%AAPandoc%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Word%E7%9A%84%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2022-11-04T13:39:52.084Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="问题-脚注分隔符为什么被强制缩进2字符">问题:
+脚注分隔符为什么被强制缩进2字符？</h1>
+<p>因为pandoc的默认输出docx是基于一个预设docx模板生成的。这个预设模板可能和外国人的写作习惯有关（这方面可以参考
+Taylor &amp; Francis 旗下期刊的投稿模板，该模板的第一自然段（First
+Paragraph）不缩进，第二自然段及后续段落（正文文本）才缩进）。正文部分实际上分成3种，<code>正文</code>
+<code>正文文本</code>
+<code>First Paragraph</code>，实际生效的样式是后面两个，其中第一自然段被设置成<code>First Paragraph</code>，其余的正文部分被设置成<code>正文文本</code>。如果自定义模板中没有这两个样式，pandoc就会把所有文本都设置成<code>正文</code>样式。而正文样式一般会被我们设置成首行缩进，这样就自然产生脚注和脚注分割线都被缩进的问题。</p>
+<p>另外一个需要指出的问题是，脚注样式对应的是<code>脚注文本</code>。如果没有设置过这个样式，pandoc也会默认赋予给<code>正文</code>样式。这就造成了脚注和脚注下划线都被首行缩进的双重问题。
+解决方案,最好直接基于pandoc默认生成的docx文档来修改样式。尽量不要缺少相应的样式，避免pandoc在缺少相应样式的时候使用缺省值，产生很多格式上的麻烦。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">pandoc</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">写作</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/11/04/%E4%B8%80%E4%B8%AAPandoc%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90Word%E7%9A%84%E6%A8%A1%E6%9D%BF%E9%97%AE%E9%A2%98/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-用R语言处理来自《中国工业经济》的stata数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -4188,179 +4278,6 @@ data-line-spacing="2" role="doc-bibliography">
 
 
   
-    <article id="post-在线可视化工具flourish" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/03/26/%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7flourish/">在线可视化工具flourish</a>
-    </h1>
-  
-
-        
-        <a href="/2022/03/26/%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7flourish/" class="archive-article-date">
-  	<time datetime="2022-03-26T03:26:50.987Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ul>
-<li><p>附件::</p></li>
-<li><p>备注:: <a target="_blank" rel="noopener" href="https://app.flourish.studio/templates">Flourish |
-Data Visualisation &amp; Storytelling</a>, 2022/3/22</p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116318/edit?">对比图 |
-Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/MYyJNoVXih3bg9m.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9080284/edit">排名变化图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/eSRaNpYwCBWFmki.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116952/edit?">排名变化图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/yloMZRCKjtTcN1n.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116476/edit">战略坐标图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/3ga4vtjFinlMQVC.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9080273/edit">四维气泡图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/tkDLThidWA3KQy4.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116596/edit">动态气泡图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/bc6H8SP2hEoYeLt.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116596/edit">气泡图聚类图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/JXOjoLB8GNQkt5u.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9116801/edit?">动态聚类图
-| Flourish</a>, 2022/3/24</p></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9117034/edit?">方向和弦图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/7AopiBrPFa3ZEt5.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9117133/edit?&amp;folder=%1E2022-03-24%E4%B8%93%E5%88%A9%E5%88%86%E6%9E%90%E5%8F%AF%E8%A7%86%E5%8C%96">径向树图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/JVQT5KtIxwAb8EP.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9117229/edit?">诉讼关系网络图
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/6iOUJRjgNzuxAyt.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-<li><p><a
-target="_blank" rel="noopener" href="https://app.flourish.studio/visualisation/9117337/edit?">带分类的词云
-| Flourish</a>, 2022/3/24</p></li>
-<li><figure>
-<img src="https://s2.loli.net/2022/03/26/Vbaz4L1fwQiYtuP.jpg"
-alt="image.png" />
-<figcaption aria-hidden="true">image.png</figcaption>
-</figure></li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">工具/在线</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/03/26/%E5%9C%A8%E7%BA%BF%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7flourish/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -4560,6 +4477,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">灵感</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">pandoc</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">写作</a>
               </li>
             
             <div class="clearfix"></div>
